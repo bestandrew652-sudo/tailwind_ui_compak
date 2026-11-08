@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication & Onboarding - TailwindUI Pack</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../dist/output.css">
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- Showcase Page Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="../index.html" class="flex items-center gap-x-3 text-slate-400 hover:text-white transition">
+          <span class="h-8 w-8 rounded-lg bg-pink-600 flex items-center justify-center font-bold text-white text-lg">T</span>
+          <span class="font-bold text-lg text-white">TailwindUI Pack</span>
+        </a>
+        <span class="text-xs text-slate-500">/ Authentication & Forms</span>
+      </div>
+      <a href="../index.html" class="text-sm font-medium text-slate-400 hover:text-white transition">&larr; Back to Showcase</a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12 space-y-20">
+    
+    <!-- Section Intro -->
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-wider text-pink-400">Category: Authentication & Onboarding</span>
+      <h1 class="text-3xl font-extrabold text-white mt-1">Tabbed Auth Modal & Split-Screen Sign-In</h1>
+      <p class="text-slate-400 text-sm mt-1">Interactive login and registration flows built with Alpine.js state management.</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 1: TABBED AUTH MODAL             -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold text-white">1. Tabbed Login & Signup Modal</h2>
+        <span class="text-xs text-slate-500">Alpine.js tab switching</span>
+      </div>
+
+      <!-- Modal Wrapper Demo Container -->
+      <div class="relative rounded-3xl border border-slate-800 bg-slate-900/40 p-8 sm:p-16 backdrop-blur-xl flex items-center justify-center">
+        
+        <!-- Modal Card -->
+        <div x-data="{ tab: 'login' }" class="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/90 p-8 shadow-2xl backdrop-blur-2xl">
+          
+          <!-- Modal Header -->
+          <div class="text-center mb-6">
+            <div class="mx-auto h-10 w-10 rounded-xl bg-pink-600/20 text-pink-400 border border-pink-500/30 flex items-center justify-center font-bold text-lg mb-3">
+              N
+            </div>
+            <h3 class="text-xl font-bold text-white" x-text="tab === 'login' ? 'Welcome back' : 'Create an account'"></h3>
+            <p class="text-xs text-slate-400 mt-1" x-text="tab === 'login' ? 'Enter your credentials to access your dashboard' : 'Get started with your 14-day free trial'"></p>
+          </div>
+
+          <!-- Tab Switcher -->
+          <div class="grid grid-cols-2 p-1 bg-slate-950 rounded-xl border border-slate-800 mb-6">
+            <button @click="tab = 'login'" :class="tab === 'login' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'" class="py-2 text-xs font-semibold rounded-lg transition">Sign In</button>
+            <button @click="tab = 'signup'" :class="tab === 'signup' ? 'bg-slate-800 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'" class="py-2 text-xs font-semibold rounded-lg transition">Sign Up</button>
+          </div>
+
+          <!-- Social Auth Buttons -->
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <button type="button" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-slate-800 bg-slate-950 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </button>
+            <button type="button" class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-slate-800 bg-slate-950 text-xs font-semibold text-slate-300 hover:bg-slate-800 hover:text-white transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M12.24 10.285V14h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.344-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0 5.48 0 0 5.48 0 12.24s5.48 12.24 12.24 12.24c7.067 0 11.753-4.974 11.753-11.981 0-.829-.082-1.467-.181-2.014H12.24z"/></svg>
+              Google
+            </button>
+          </div>
+
+          <div class="relative flex items-center justify-center mb-6">
+            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-800"></div></div>
+            <span class="relative bg-slate-900 px-3 text-[10px] uppercase font-semibold text-slate-500">Or continue with email</span>
+          </div>
+
+          <!-- Form Fields -->
+          <form @submit.prevent class="space-y-4">
+            <template x-if="tab === 'signup'">
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Full Name</label>
+                <input type="text" placeholder="Jordan Reagan" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-pink-500 transition">
+              </div>
+            </template>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1.5">Email Address</label>
+              <input type="email" placeholder="you@nodalytek.io" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-pink-500 transition">
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-medium text-slate-300">Password</label>
+                <template x-if="tab === 'login'">
+                  <a href="#" class="text-xs text-pink-400 hover:text-pink-300 transition">Forgot password?</a>
+                </template>
+              </div>
+              <input type="password" placeholder="••••••••••••" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-pink-500 transition">
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-semibold text-sm transition shadow-lg shadow-pink-600/25" x-text="tab === 'login' ? 'Sign In to Dashboard' : 'Create Free Account'"></button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 2: SPLIT-SCREEN AUTH             -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">2. Split-Screen Sign-In Layout</h2>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        
+        <!-- Left Hero / Brand Panel (5 cols) -->
+        <div class="lg:col-span-5 relative overflow-hidden bg-slate-950 p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800">
+          <div class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-pink-500/10 blur-3xl"></div>
+          
+          <div class="flex items-center gap-x-3">
+            <div class="h-8 w-8 rounded-lg bg-pink-600 flex items-center justify-center font-bold text-white">N</div>
+            <span class="font-bold text-lg text-white">NodalyTek Studio</span>
+          </div>
+
+          <div class="my-16 space-y-4">
+            <blockquote class="text-lg font-medium text-slate-200 leading-snug">
+              &ldquo;This component pack cut our front-end development time in half. Clean Tailwind code with zero bloat.&rdquo;
+            </blockquote>
+            <div class="flex items-center gap-3 pt-2">
+              <div class="h-10 w-10 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 flex items-center justify-center font-bold text-xs">JR</div>
+              <div>
+                <div class="font-bold text-sm text-white">Jordan David</div>
+                <div class="text-xs text-slate-400">Lead Developer, NodalyTek</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-500">
+            Secure 256-bit SSL encrypted authentication portal.
+          </div>
+        </div>
+
+        <!-- Right Form Panel (7 cols) -->
+        <div class="lg:col-span-7 p-8 sm:p-12 flex items-center justify-center bg-slate-900/50">
+          <div class="w-full max-w-md space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Sign in to your account</h3>
+              <p class="text-sm text-slate-400 mt-1">Welcome back! Please enter your details.</p>
+            </div>
+
+            <form class="space-y-4">
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Email Address</label>
+                <input type="email" placeholder="name@company.com" class="w-full px-3.5 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-pink-500 transition">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-300 mb-1.5">Password</label>
+                <input type="password" placeholder="••••••••••••" class="w-full px-3.5 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-pink-500 transition">
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <label class="flex items-center gap-2 text-slate-400">
+                  <input type="checkbox" class="rounded

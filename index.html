@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind UI Component Pack Showcase</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="./dist/output.css"> 
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <span class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-lg">T</span>
+        <span class="font-bold text-lg text-white">TailwindUI Pack</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-medium">v1.0 MVP</span>
+      </div>
+      <nav class="flex items-center gap-4 text-sm font-medium">
+        <a href="#categories" class="text-slate-400 hover:text-white transition">Categories</a>
+        <a href="#docs" class="text-slate-400 hover:text-white transition">Docs</a>
+        <a href="https://github.com" target="_blank" class="rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500 transition">Get All Access</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12">
+    <div class="text-center max-w-3xl mx-auto my-8">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Production-Ready <span class="bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Tailwind CSS</span> Components
+      </h1>
+      <p class="mt-4 text-lg text-slate-400">
+        Copy-paste UI blocks designed for SaaS products, marketing sites, and full-stack web applications.
+      </p>
+    </div>
+
+    <!-- Category Grid -->
+    <div id="categories" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card: Heroes -->
+      <a href="components/heroes.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">5 Components</span>
+          <span class="text-slate-500 group-hover:text-indigo-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-indigo-300">Hero Sections</h3>
+        <p class="mt-2 text-sm text-slate-400">SaaS landing headers, app showcase viewports, and high-impact CTA banners.</p>
+      </a>
+
+      <!-- Card: Bento Grids -->
+      <a href="components/bento-grids.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">4 Components</span>
+          <span class="text-slate-500 group-hover:text-purple-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-purple-300">Feature & Bento Grids</h3>
+        <p class="mt-2 text-sm text-slate-400">Asymmetric grid layouts, hover micro-interactions, and visual feature highlights.</p>
+      </a>
+
+      <!-- Card: Pricing -->
+      <a href="components/pricing.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">5 Components</span>
+          <span class="text-slate-500 group-hover:text-emerald-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-emerald-300">Pricing & Conversion</h3>
+        <p class="mt-2 text-sm text-slate-400">Interactive billing toggles, feature comparison matrices, and checkout cards.</p>
+      </a>
+
+      <!-- Card: Auth -->
+      <a href="components/auth.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-pink-400">4 Components</span>
+          <span class="text-slate-500 group-hover:text-pink-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-pink-300">Authentication & Forms</h3>
+        <p class="mt-2 text-sm text-slate-400">Tabbed auth modals, split-screen sign-in forms, and multi-step onboarding wizards.</p>
+      </a>
+
+      <!-- Card: Tables & Dashboard -->
+      <a href="components/tables.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">5 Components</span>
+          <span class="text-slate-500 group-hover:text-amber-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-amber-300">Data Tables & Dashboard UI</h3>
+        <p class="mt-2 text-sm text-slate-400">Data-dense tables, stat summary cards, and notification feed drawers.</p>
+      </a>
+
+      <!-- Card: Navigation -->
+      <a href="components/navigation.html" class="group block rounded-2xl border border-slate-800 bg-slate-900/40 p-6 hover:border-indigo-500/50 hover:bg-slate-900/80 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">5 Components</span>
+          <span class="text-slate-500 group-hover:text-cyan-400 transition">&rarr;</span>
+        </div>
+        <h3 class="mt-4 text-xl font-bold text-white group-hover:text-cyan-300">Navigation & Footers</h3>
+        <p class="mt-2 text-sm text-slate-400">Responsive headers with mobile flyout panels, collapsible sidebars, and footers.</p>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+    Built for high conversion. Free & Premium Tailwind CSS blocks.
+  </footer>
+</body>
+</html>

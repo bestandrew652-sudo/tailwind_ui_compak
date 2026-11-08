@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Sections & Headers - TailwindUI Pack</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../dist/output.css">
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- Showcase Page Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="../index.html" class="flex items-center gap-x-3 text-slate-400 hover:text-white transition">
+          <span class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-lg">T</span>
+          <span class="font-bold text-lg text-white">TailwindUI Pack</span>
+        </a>
+        <span class="text-xs text-slate-500">/ Hero Sections</span>
+      </div>
+      <a href="../index.html" class="text-sm font-medium text-slate-400 hover:text-white transition">&larr; Back to Showcase</a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12 space-y-24">
+    
+    <!-- Section Intro -->
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Category: Marketing & Landing</span>
+      <h1 class="text-3xl font-extrabold text-white mt-1">SaaS Hero Sections & Viewports</h1>
+      <p class="text-slate-400 text-sm mt-1">Conversion-focused hero headers with glowing backdrop meshes, app mockups, and code terminals.</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 1: APP SHOWCASE HERO WITH GLOW   -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">1. SaaS Centered Hero with App Viewport</h2>
+
+      <div x-data="{ tab: 'preview', copied: false }" class="rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl overflow-hidden shadow-2xl">
+        <!-- Control Bar -->
+        <div class="px-6 py-3.5 border-b border-slate-800 bg-slate-950/80 flex items-center justify-between">
+          <div class="flex items-center p-1 bg-slate-900 rounded-xl border border-slate-800">
+            <button @click="tab = 'preview'" :class="tab === 'preview' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition">Preview</button>
+            <button @click="tab = 'code'" :class="tab === 'code' ? 'bg-indigo-600 text-white' : 'text-slate-400'" class="px-3 py-1.5 text-xs font-semibold rounded-lg transition">Code</button>
+          </div>
+          <button @click="navigator.clipboard.writeText($refs.hero1.innerText); copied = true; setTimeout(() => copied = false, 2000)" class="px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-900 text-xs text-slate-300 hover:bg-slate-800 transition">
+            <span x-text="copied ? 'Copied!' : 'Copy Code'" :class="copied ? 'text-emerald-400 font-bold' : ''"></span>
+          </button>
+        </div>
+
+        <!-- Preview Tab -->
+        <div x-show="tab === 'preview'">
+          <section class="relative overflow-hidden bg-slate-950 py-16 sm:py-24 px-6">
+            <div class="pointer-events-none absolute -top-40 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl">
+              <div class="aspect-1097/845 w-272 bg-linear-to-tr from-indigo-500 to-purple-500 opacity-20"></div>
+            </div>
+
+            <div class="mx-auto max-w-5xl text-center">
+              <div class="mb-6 inline-flex items-center gap-x-2 rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-300">
+                <span class="rounded-full bg-indigo-500 px-2 py-0.5 text-[10px] font-semibold text-white">NEW</span>
+                <span>v2.0 Real-time Analytics Engine</span>
+              </div>
+
+              <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+                Automate your workflow <br />
+                <span class="bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">without writing complex code</span>
+              </h1>
+              
+              <p class="mx-auto mt-6 max-w-2xl text-base text-slate-400 sm:text-lg">
+                Streamline operations, sync API endpoints in real-time, and scale your SaaS backend infrastructure with zero manual configuration.
+              </p>
+
+              <div class="mt-8 flex items-center justify-center gap-x-4">
+                <a href="#" class="rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:bg-indigo-500 transition">Start Free Trial</a>
+                <a href="#" class="rounded-xl border border-slate-800 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 transition">Watch Demo</a>
+              </div>
+
+              <!-- App Mockup Window -->
+              <div class="relative mt-12 rounded-2xl border border-slate-800 bg-slate-900/50 p-2 ring-1 ring-white/10 backdrop-blur-xl">
+                <div class="overflow-hidden rounded-xl bg-slate-950">
+                  <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-4 py-2.5">
+                    <div class="flex items-center gap-x-1.5">
+                      <span class="h-2.5 w-2.5 rounded-full bg-rose-500"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+                      <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-500">app.nodalytek.io/dashboard</span>
+                    <div class="w-8"></div>
+                  </div>
+                  <div class="grid h-64 place-items-center bg-slate-900/30 p-8">
+                    <p class="text-xs text-slate-500 font-mono">[ Interactive Application Viewport Graphic ]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Code Tab -->
+        <div x-show="tab === 'code'" x-cloak class="p-6 bg-slate-950 font-mono text-xs text-slate-300 overflow-x-auto">
+          <pre><code x-ref="hero1">&lt;section class="relative overflow-hidden bg-slate-950 py-16 sm:py-24 px-6"&gt;
+  &lt;!-- Hero Section Content --&gt;
+&lt;/section&gt;</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 2: SPLIT HERO WITH TERMINAL CODE -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">2. Split Two-Column Hero with Code Terminal</h2>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8 sm:p-12 backdrop-blur-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column: Copy -->
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Developer-First API</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+              Deploy Edge APIs in seconds.
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Connect your database schema to serverless TypeScript edge functions with automatic type safety and instant global routing.
+            </p>
+            <div class="flex items-center gap-4 pt-2">
+              <a href="#" class="px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-500 transition shadow-lg shadow-indigo-600/20">Read the Docs</a>
+              <a href="#" class="px-5 py-3 rounded-xl border border-slate-800 bg-slate-950 text-slate-300 font-semibold text-sm hover:bg-slate-900 transition">View Benchmarks</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Code Terminal -->
+          <div class="lg:col-span-6 rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden font-mono text-xs">
+            <div class="flex items-center justify-between px-4 py-3 bg-slate-900 border-b border-slate-800 text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-500/80"></span>
+                <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
+              </div>
+              <span>serverless_edge.ts</span>
+            </div>
+            <div class="p-5 space-y-2 text-slate-300">
+              <p><span class="text-purple-400">import</span> { createServer } <span class="text-purple-400">from</span> <span class="text-emerald-300">'@nodalytek/edge'</span>;</p>
+              <p class="text-slate-500">// Initialize cluster instance</p>
+              <p><span class="text-blue-400">const</span> app = <span class="text-yellow-300">createServer</span>({ region: <span class="text-emerald-300">'global'</span> });</p>
+              <p class="pt-2">app.<span class="text-yellow-300">get</span>(<span class="text-emerald-300">'/v1/sync'</span>, (req, res) =&gt; {</p>
+              <p class="pl-4"><span class="text-purple-400">return</span> res.<span class="text-yellow-300">json</span>({ status: <span class="text-emerald-300">'synced'</span>, latency: <span class="text-orange-400">12</span> });</p>
+              <p>});</p>
+              <p class="pt-2 text-emerald-400">&gt; Deployed to 28 edge locations in 1.2s</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 3: WAITLIST / LEAD GEN HERO     -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">3. Waitlist & Early Access Hero</h2>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8 sm:p-16 backdrop-blur-xl text-center max-w-4xl mx-auto">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20">PRIVATE BETA</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4 tracking-tight">Be first in line when we launch</h2>
+        <p class="mt-4 text-slate-400 text-sm sm:text-base max-w-xl mx-auto">Join over 1,200+ founders and software engineers getting early access to our Tailwind UI component suite.</p>
+
+        <!-- Form Input Bar -->
+        <form @submit.prevent class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
+          <input type="email" placeholder="Enter your work email..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-pink-500 transition">
+          <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-semibold text-sm transition shadow-lg shadow-pink-600/25 whitespace-nowrap">Join Waitlist</button>
+        </form>
+
+        <p class="mt-4 text-xs text-slate-500">Unsubscribe anytime with 1-click.</p>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "tailwind-ui-pack",
+  "version": "1.0.0",
+  "description": "Production-ready Tailwind CSS v4 components",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["tailwind", "ui", "components"],
+  "author": "NodalyTek Studio",
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

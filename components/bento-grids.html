@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bento Grids & Feature Layouts - TailwindUI Pack</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- Showcase Page Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <a href="../index.html" class="flex items-center gap-x-3 text-slate-400 hover:text-white transition">
+          <span class="h-8 w-8 rounded-lg bg-purple-620 flex items-center justify-center font-bold text-white text-lg">T</span>
+          <span class="font-bold text-lg text-white">TailwindUI Pack</span>
+        </a>
+        <span class="text-xs text-slate-500">/ Feature & Bento Grids</span>
+      </div>
+      <a href="../index.html" class="text-sm font-medium text-slate-400 hover:text-white transition">&larr; Back to Showcase</a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-12 space-y-20">
+    
+    <!-- Section Intro -->
+    <div>
+      <span class="text-xs font-semibold uppercase tracking-wider text-purple-400">Category: Feature Grids</span>
+      <h1 class="text-3xl font-extrabold text-white mt-1">Asymmetric Bento Box Layouts</h1>
+      <p class="text-slate-400 text-sm mt-1">High-impact feature showcases built with CSS Grid, glowing hover states, and live code placeholders.</p>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 1: 6-CARD ASYMMETRIC BENTO GRID   -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">1. Asymmetric 6-Card Bento Showcase</h2>
+
+      <div class="rounded-3xl border border-slate-800 bg-slate-800/30 p-6 sm:p-10 backdrop-blur-xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- Card 1: Primary Large (Spans 2 columns) -->
+          <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-8 transition hover:border-purple-500/50 md:col-span-2 flex flex-col justify-between">
+            <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-purple-500/10 blur-3xl transition group-hover:bg-purple-500/20"></div>
+            <div>
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 ring-1 ring-purple-500/20">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-white">Real-Time Data Streaming</h3>
+              <p class="mt-2 max-w-lg text-sm text-slate-400">
+                Sync millions of database records instantly with sub-50ms latency guarantees across global edge regions.
+              </p>
+            </div>
+            
+            <div class="mt-8 rounded-xl border border-slate-900 bg-slate-950 p-4 font-mono text-xs text-purple-300">
+              <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-slate-800/80">
+                <span>stream_client.ts</span>
+                <span class="text-emerald-400">● Connected (24ms)</span>
+              </div>
+              <p class="mt-2 text-slate-300">&gt; DB_EDGE_REGIONS: 12 Active Nodes [OK]</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Security Highlight -->
+          <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-8 transition hover:border-indigo-500/50 flex flex-col justify-between">
+            <div>
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400 ring-1 ring-indigo-500/20">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-white">Automated RLS</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                Granular Row Level Security policies generated automatically from your schema definitions.
+              </p>
+            </div>
+            <div class="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-indigo-400">
+              <span>AES-256 Encrypted</span> &rarr;
+            </div>
+          </div>
+
+          <!-- Card 3: Metric Accent Card -->
+          <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-8 transition hover:border-emerald-500/50 flex flex-col justify-between">
+            <div>
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-white">99.99% Uptime</h3>
+              <p class="mt-2 text-sm text-slate-400">
+                Automatic multi-region failover handling traffic spikes effortlessly.
+              </p>
+            </div>
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold text-white">99.99%</span>
+              <span class="text-xs text-emerald-400 font-semibold">SLA Guarantee</span>
+            </div>
+          </div>
+
+          <!-- Card 4: SDK Integration (Spans 2 columns) -->
+          <div class="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-8 transition hover:border-pink-500/50 md:col-span-2 flex flex-col justify-between">
+            <div class="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-pink-500/10 blur-3xl transition group-hover:bg-pink-500/20"></div>
+            <div>
+              <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 ring-1 ring-pink-500/20">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <h3 class="mt-6 text-xl font-bold text-white">Type-Safe Client Libraries</h3>
+              <p class="mt-2 max-w-lg text-sm text-slate-400">
+                Auto-generated TypeScript, Python, and Go client SDKs updated in real-time as your database schema evolves.
+              </p>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded-lg border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs font-mono text-slate-300">npm i @nodalytek/core</span>
+              <span class="rounded-lg border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs font-mono text-slate-300">pip install nodalytek</span>
+              <span class="rounded-lg border border-slate-800 bg-slate-950 px-3 py-1.5 text-xs font-mono text-slate-300">go get github.com/nodalytek</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENT 2: 3-COLUMN EQUAL BENTO CARD GRID -->
+    <!-- ========================================== -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-bold text-white">2. Equal 3-Column Metric Feature Grid</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur-xl hover:border-slate-700 transition">
+          <span class="text-xs font-mono text-cyan-400 uppercase tracking-widest">01 / SPEED</span>
+          <h3 class="text-lg font-bold text-white mt-3">Zero Bundle Bloat</h3>
+          <p class="text-sm text-slate-400 mt-2">Pure utility-first Tailwind CSS outputting ultra-light production CSS files under 15KB compressed.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur-xl hover:border-slate-700 transition">
+          <span class="text-xs font-mono text-purple-400 uppercase tracking-widest">02 / ACCESSIBILITY</span>
+          <h3 class="text-lg font-bold text-white mt-3">ARIA-Compliant Markup</h3>
+          <p class="text-sm text-slate-400 mt-2">Pre-configured keyboard navigation, screen reader support, and focus state indicators built right into every block.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 backdrop-blur-xl hover:border-slate-700 transition">
+          <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest">03 / DESIGN SYSTEM</span>
+          <h3 class="text-lg font-bold text-white mt-3">Dark Mode First</h3>
+          <p class="text-sm text-slate-400 mt-2">Designed ground-up for dark slate aesthetics with vibrant accent highlights and subtle backdrop blurs.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
