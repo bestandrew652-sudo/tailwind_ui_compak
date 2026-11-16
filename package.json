@@ -1,27 +1,22 @@
+
 {
-  "name": "tailwind-ui-pack",
+  "name": "tailwind-ui-compak",
   "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "next": "latest"
-  },    
   "description": "Production-ready Tailwind CSS v4 components",
-  "main": "index.html",
+  "private": true,
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "chmod +x node_modules/.bin/tailwindcss && npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
   },
-  "keywords": ["tailwind", "ui", "components"],
+  "keywords": [
+    "tailwind",
+    "ui",
+    "components"
+  ],
   "author": "NodalyTek Studio",
   "license": "MIT",
   "devDependencies": {
-    "@parcel/watcher": "^2.6.0",
     "@tailwindcss/cli": "^4.3.5",
-    "tailwindcss": "^4.3.5",
-    "postcss": "^8.0.0",
-    "typescript": "^5.0.0"
+    "tailwindcss": "^4.3.5"
   }
 }
